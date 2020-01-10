@@ -1,0 +1,8 @@
+{
+	"project_name": "Node with MySQL",
+	"deployment_type": "test-mode",
+	"host": "127.0.0.1",
+	"database": "node_mysql",
+	"user": "root",
+	"password": ""
+}

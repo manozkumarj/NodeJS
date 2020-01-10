@@ -18,6 +18,8 @@ var cors = require('cors');
 app.use(cors());
 app.options('*', cors()); // include before other routes
 
+const port = 6699;
+
 
 /*************************************************************************************/
 /******************* CONVERTING RETURNED DATA TO JSON ********************************/
@@ -57,7 +59,9 @@ pool.getConnection(function (err, connection) {
 		console.log("code => " + err.code);
 		// console.log(err);
 		// console.log("Error, Connection was failed", err );
-	} else console.log("Successfully connected to MySQL's db --> " + config.database); // not connected!
+	} else {
+		console.log("Successfully connected to MySQL's db --> " + config.database);
+	}
 });
 
 function executeQuery(strQuery, params, res, responseSenderCallback) {
@@ -188,8 +192,8 @@ app.post('/report/get-reports', function (req, res) {
 });
 
 
-app.listen(6699, () => {
-	console.log('Server is listening on port --> 6699');
+app.listen(port, () => {
+	console.log('Server is listening on port --> ' + port);
 });
 
 
