@@ -37,7 +37,7 @@ const process = require('process');
 const mysql = require('mysql');
 const aes256 = require('aes256');
 const config = require('./config');
-const password = aes256.decrypt(typeof x, config.password);
+const password = '';
 
 var pool = mysql.createPool({
 	connectionLimit: 100, //important
