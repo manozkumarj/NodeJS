@@ -1,51 +1,59 @@
--- MySQL Administrator dump 1.4
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
 --
--- ------------------------------------------------------
--- Server version	5.7.25-log
+-- Host: 127.0.0.1
+-- Generation Time: Jan 12, 2020 at 06:01 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Create schema node_mysql
+-- Database: `node_mysql`
 --
 
-CREATE DATABASE IF NOT EXISTS node_mysql;
-USE node_mysql;
+-- --------------------------------------------------------
 
 --
--- Definition of table `tokens`
+-- Table structure for table `tokens`
 --
 
-DROP TABLE IF EXISTS `tokens`;
 CREATE TABLE `tokens` (
   `id` int(11) NOT NULL,
-  `token` text NOT NULL,
-  PRIMARY KEY (`id`)
+  `token` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tokens`
+-- Indexes for dumped tables
 --
 
-/*!40000 ALTER TABLE `tokens` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tokens` ENABLE KEYS */;
+--
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`id`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
+--
+-- AUTO_INCREMENT for table `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

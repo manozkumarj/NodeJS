@@ -90,6 +90,11 @@ app.get('/node_details', function (req, res) {
 var request = require('request');
 var responseStatus = "true";
 
+var FCM = require('fcm-node');
+//put your server key here
+var serverKey = 'AAAAhaFoIkY:APA91bFgnGzZoGv6s0fd6fiJ6PMZemLPvnpgYopmjc_PQxNg7toOPp6BSZGDYHh5zZHpZSk5uBl4w2kwxQQo6rnlGBNuBQHg3Ljw33OzmCP7hqWqVquKmGVh0WiJbQ7dWPpHMf9n5AfF';
+var fcm = new FCM(serverKey);
+
 // setInterval(function () {
 // 	initiator();
 // }, 3600000);
@@ -126,26 +131,63 @@ app.post('/insertItems', function (req, res) {
 });
 
 
-
 // Inserting items
-app.post('/insertItem', function (req, res) {
-	var item = req.body.value;
+app.post('/storeToken', function (req, res) {
+    console.log("Received is -> " + JSON.stringify(req.body));	
+	var token = req.body.token;
+    console.log("Token is -> " + token);	
 
-  	var sql = `INSERT INTO items (value) VALUES ('${item}')`;
+  	var sql = `INSERT INTO tokens (token) VALUES ('${token}')`;
 	con.query(sql, function (err, result, fields) {
-		console.log("From /insertItem");
+		console.log("From /storeToken");
 	    if (err) console.log(err);
-	    console.log("Item Inserted - "+ item);
-	    res.send(result);
+	    console.log("token Inserted - "+ token);
+	    res.json(result);
 	});
 });
 
+
 // Fetching items
-app.get('/getItems', function (req, res) {
-  	var sql = `SELECT * FROM items ORDER BY id DESC`;
+app.get('/getTokens', function (req, res) {
+
+    var token_array = [];
+
+  	var sql = `SELECT * FROM tokens ORDER BY id DESC`;
 	con.query(sql, function (err, result, fields) {
 	    if (err) console.log(err);
-	    res.send(result);
+	
+    for (let i = 0; i < result.length; i++) {
+    	console.log(result[i]);
+        token_array.push(result[i]);
+    }
+
+    // for (let i = 0; i < token_array.length; i++) {
+    //     var message = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+    //         to: token_array[i].token,
+    //         collapse_key: 'pinkk',
+
+    //         notification: {
+    //             title: 'Title of your push notification',
+    //             body: 'Body of your push notification'
+    //         },
+
+    //         data: {  //you can send only notification or only data(or include both)
+    //             my_key: 'my value',
+    //             my_another_key: 'my another value'
+    //         }
+    //     };
+
+    //     fcm.send(message, function (err, response) {
+    //         if (err) {
+    //             console.log("Something has gone wrong!");
+    //             console.log(err);
+    //         } else {
+    //             console.log("Successfully sent with response: ", response);
+    //         }
+    //     });
+    // }
+
+	    res.json(result);
 	});
 });
 

@@ -1,0 +1,19 @@
+{
+  "name": "jimp-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gifsicle": "^5.1.0",
+    "jimp": "^0.14.0",
+    "pngquant-bin": "^6.0.0"
+  },
+  "devDependencies": {
+    "compress-images": "^1.7.8"
+  }
+}
