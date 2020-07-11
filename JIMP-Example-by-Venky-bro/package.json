@@ -1,0 +1,16 @@
+{
+  "name": "jimp-example-by-venky-bro",
+  "version": "1.0.0",
+  "description": "JIMP-Example-by-Venky-bro",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manoj, Venky bro",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jimp": "^0.14.0",
+    "multer": "^1.4.2"
+  }
+}
