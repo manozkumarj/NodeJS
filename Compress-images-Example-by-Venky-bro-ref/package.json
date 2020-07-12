@@ -1,0 +1,20 @@
+{
+  "name": "compress-images-example-by-venky-bro-ref",
+  "version": "1.0.0",
+  "description": "Compress-images-Example-by-Venky-bro-ref",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manoj",
+  "license": "ISC",
+  "dependencies": {
+    "compress-images": "^1.7.8",
+    "express": "^4.17.1",
+    "filereader": "^0.10.3",
+    "gifsicle": "^5.1.0",
+    "jimp": "^0.14.0",
+    "multer": "^1.4.2",
+    "pngquant-bin": "^6.0.0"
+  }
+}
