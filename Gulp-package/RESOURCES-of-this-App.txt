@@ -1,0 +1,2 @@
+* https://web.dev/codelab-imagemin-gulp/
+* https://stackoverflow.com/questions/48224037/cannot-build-project-typeerror-imagemin-gifsicle-is-not-a-function
